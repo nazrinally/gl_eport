@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Game Developer Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">Nazrin Ally</div>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html" class="active">Project</a></li>
+            <li><a href="features.html">Progression</a></li>
+            <li><a href="gallery.html">Documents</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Content -->
+    <main class="page-content">
+        <section id="project" class="section">
+            
+            <div class="modern-computer">
+                <!-- Computer Mouse -->
+                <div class="computer-mouse">
+                    <div class="mouse-body">
+                        <div class="mouse-button-left"></div>
+                        <div class="mouse-divider"></div>
+                        <div class="mouse-button-right"></div>
+                        <div class="mouse-scroll"></div>
+                    </div>
+                </div>
+                
+                <!-- Computer Monitor -->
+                <div class="monitor-device">
+                    <div class="monitor-screen">
+                        <!-- Windows 11 Background -->
+                        <div class="windows-desktop">
+                            <!-- Desktop Icons -->
+                            <div class="desktop-icons">
+                                <div class="desktop-icon" data-window="concept">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>Concept</span>
+                                </div>
+                                <div class="desktop-icon" data-window="genre">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>Genre</span>
+                                </div>
+                                <div class="desktop-icon" data-window="audience">
+                                    <i class="fas fa-users"></i>
+                                    <span>Audience</span>
+                                </div>
+                                <div class="desktop-icon" data-window="inspiration">
+                                    <i class="fas fa-star"></i>
+                                    <span>Inspiration</span>
+                                </div>
+                                <div class="desktop-icon" data-window="tech">
+                                    <i class="fas fa-code"></i>
+                                    <span>Tech Stack</span>
+                                </div>
+                                <div class="desktop-icon" data-window="timeline">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Timeline</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Windows -->
+                            <div class="window-container" id="conceptWindow" style="display: none;">
+                                <div class="window-header">
+                                    <div class="window-title">Concept</div>
+                                    <div class="window-close" data-close="concept">×</div>
+                                </div>
+                                <div class="window-content">
+                                    <h3>Project: Endless</h3>
+                                    <p>Rogue-like endless wave defence where players fight through hordes of enemies in a tight, fast-paced 2D arena. Players upgrade abilities between waves and compete for high scores.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="window-container" id="genreWindow" style="display: none;">
+                                <div class="window-header">
+                                    <div class="window-title">Genre</div>
+                                    <div class="window-close" data-close="genre">×</div>
+                                </div>
+                                <div class="window-content">
+                                    <h3>Game Genre</h3>
+                                    <p>Rogue-like / 2D / Endless Wave Defense</p>
+                                </div>
+                            </div>
+                            
+                            <div class="window-container" id="audienceWindow" style="display: none;">
+                                <div class="window-header">
+                                    <div class="window-title">Target Audience</div>
+                                    <div class="window-close" data-close="audience">×</div>
+                                </div>
+                                <div class="window-content">
+                                    <h3>Target Audience</h3>
+                                    <p>Players who enjoy skill-based, high-score driven 2D games and fast progression loops.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="window-container" id="inspirationWindow" style="display: none;">
+                                <div class="window-header">
+                                    <div class="window-title">Inspiration</div>
+                                    <div class="window-close" data-close="inspiration">×</div>
+                                </div>
+                                <div class="window-content">
+                                    <h3>Inspiration</h3>
+                                    <p>Inspired by classic 2D wave-defence and roguelike titles with tight controls and procedurally varied enemy waves.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="window-container tech-window" id="techWindow" style="display: none;">
+                                <div class="window-header">
+                                    <div class="window-title">Technical Implementation</div>
+                                    <div class="window-close" data-close="tech">×</div>
+                                </div>
+                                <div class="window-content">
+                                    <h3>Tools & Technologies</h3>
+                                    <div class="tech-list">
+                                        <div class="tech-item-window">
+                                            <i class="fas fa-cube"></i>
+                                            <h4>Game Engine</h4>
+                                            <p>Unity 2D — Simple 2D physics, sprite rendering, and basic animations</p>
+                                        </div>
+                                        <div class="tech-item-window">
+                                            <i class="fas fa-code"></i>
+                                            <h4>Programming</h4>
+                                            <p>C# basics — Player movement, enemy spawning, and wave management</p>
+                                        </div>
+                                        <div class="tech-item-window">
+                                            <i class="fas fa-paint-brush"></i>
+                                            <h4>Assets</h4>
+                                            <p>Free asset packs from Unity Asset Store and itch.io for sprites, animations, and sound effects</p>
+                                        </div>
+                                        <div class="tech-item-window">
+                                            <i class="fas fa-desktop"></i>
+                                            <h4>Platform</h4>
+                                            <p>PC build target — Designed for desktop gameplay with keyboard controls</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="window-container timeline-window" id="timelineWindow" style="display: none;">
+                                <div class="window-header">
+                                    <div class="window-title">Development Timeline</div>
+                                    <div class="window-close" data-close="timeline">×</div>
+                                </div>
+                                <div class="window-content timeline-content">
+                                    <div class="timeline-vertical">
+                                        <div class="timeline-item">
+                                            <div class="timeline-marker"></div>
+                                            <div class="timeline-card">
+                                                <h4>Q1 2025</h4>
+                                                <h5>Concept & Planning</h5>
+                                                <p>Meeting with GL teacher, establishing goals and planning the game</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-marker"></div>
+                                            <div class="timeline-card">
+                                                <h4>Q2 2025</h4>
+                                                <h5>Prototyping</h5>
+                                                <p>Core mechanics implementation and basic level design</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-marker"></div>
+                                            <div class="timeline-card">
+                                                <h4>Q3 2025</h4>
+                                                <h5>Polishing</h5>
+                                                <p>Further polishing of the game, adding more features</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-marker"></div>
+                                            <div class="timeline-card">
+                                                <h4>Q4 2025</h4>
+                                                <h5>Finalization</h5>
+                                                <p>Fixing small bugs/errors, doing play testing, final polishing</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Windows 11 Taskbar -->
+                            <div class="win11-taskbar">
+                                <div class="taskbar-start">
+                                    <i class="fab fa-windows"></i>
+                                </div>
+                                <div class="taskbar-icons">
+                                    <div class="taskbar-icon"><i class="fas fa-folder"></i></div>
+                                    <div class="taskbar-icon"><i class="fas fa-globe"></i></div>
+                                </div>
+                                <div class="taskbar-end">
+                                    <div class="taskbar-time">12:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Monitor Stand -->
+                    <div class="monitor-stand">
+                        <div class="stand-neck"></div>
+                        <div class="stand-base"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Window Management
+        const desktopIcons = document.querySelectorAll('.desktop-icon');
+        const windowCloses = document.querySelectorAll('.window-close');
+        
+        desktopIcons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                const windowId = icon.dataset.window;
+                const windowEl = document.getElementById(windowId + 'Window');
+                windowEl.style.display = 'block';
+                bringToFront(windowEl);
+            });
+        });
+        
+        windowCloses.forEach(closeBtn => {
+            closeBtn.addEventListener('click', () => {
+                const windowId = closeBtn.dataset.close;
+                const windowEl = document.getElementById(windowId + 'Window');
+                windowEl.style.display = 'none';
+            });
+        });
+        
+        // Drag functionality
+        let activeWindow = null;
+        let offset = { x: 0, y: 0 };
+        let highestZIndex = 100;
+        
+        function bringToFront(windowEl) {
+            highestZIndex++;
+            windowEl.style.zIndex = highestZIndex;
+        }
+        
+        document.querySelectorAll('.window-container').forEach(windowEl => {
+            const header = windowEl.querySelector('.window-header');
+            
+            header.addEventListener('mousedown', (e) => {
+                if (e.target.classList.contains('window-close')) return;
+                
+                activeWindow = windowEl;
+                bringToFront(windowEl);
+                
+                const rect = windowEl.getBoundingClientRect();
+                offset.x = e.clientX - rect.left;
+                offset.y = e.clientY - rect.top;
+                
+                windowEl.style.position = 'absolute';
+            });
+        });
+        
+        document.addEventListener('mousemove', (e) => {
+            if (!activeWindow) return;
+            
+            const container = document.querySelector('.windows-desktop');
+            const containerRect = container.getBoundingClientRect();
+            
+            let newLeft = e.clientX - containerRect.left - offset.x;
+            let newTop = e.clientY - containerRect.top - offset.y;
+            
+            // Keep within bounds
+            newLeft = Math.max(0, Math.min(newLeft, containerRect.width - activeWindow.offsetWidth));
+            newTop = Math.max(0, Math.min(newTop, containerRect.height - activeWindow.offsetHeight - 48));
+            
+            activeWindow.style.left = newLeft + 'px';
+            activeWindow.style.top = newTop + 'px';
+        });
+        
+        document.addEventListener('mouseup', () => {
+            activeWindow = null;
+        });
+    </script>
+</body>
+</html>

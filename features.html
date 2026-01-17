@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Game Developer Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">Nazrin Ally</div>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Project</a></li>
+            <li><a href="features.html" class="active">Progression</a></li>
+            <li><a href="gallery.html">Documents</a></li>
+        </ul>
+    </nav>
+
+    <!-- Features Content -->
+    <main class="page-content">
+        <section id="features" class="section">
+            
+            <div class="retro-computer">
+                <!-- Computer Mouse with Wire -->
+                <div class="computer-mouse">
+                    <div class="mouse-body">
+                        <div class="mouse-button-left"></div>
+                        <div class="mouse-divider"></div>
+                        <div class="mouse-button-right"></div>
+                        <div class="mouse-scroll"></div>
+                    </div>
+                </div>
+                
+                <div class="computer-frame">
+                    <div class="computer-top">
+                        <div class="power-indicator" id="powerButton"></div>
+                    </div>
+                    <div class="computer-screen">
+                        <button class="sidebar-toggle" id="sidebarToggle">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <div class="screen-sidebar" id="screenSidebar">
+                            <div class="sidebar-item" id="photosBtn">
+                                <i class="fas fa-image"></i>
+                                <span>Photos</span>
+                            </div>
+                            <div class="sidebar-item" id="webcamBtn">
+                                <i class="fas fa-camera"></i>
+                                <span>Webcam</span>
+                            </div>
+                            <div class="sidebar-item" id="filesBtn">
+                                <i class="fas fa-folder"></i>
+                                <span>Files</span>
+                            </div>
+                        </div>
+                        <div id="carouselView">
+                            <div class="screen-content">
+                                <div class="screen-grid">
+                                    <div class="screen-box">
+                                        <!-- Image placeholder 1 -->
+                                        <div class="screen-caption">Image Description 1</div>
+                                    </div>
+                                    <div class="screen-box">
+                                        <!-- Image placeholder 2 -->
+                                        <div class="screen-caption">Image Description 2</div>
+                                    </div>
+                                    <div class="screen-box">
+                                        <!-- Image placeholder 3 -->
+                                        <div class="screen-caption">Image Description 3</div>
+                                    </div>
+                                    <div class="screen-box">
+                                        <!-- Image placeholder 4 -->
+                                        <div class="screen-caption">Image Description 4</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="playGameView" style="display: none;">
+                            <div class="play-game-container">
+                                <div class="play-game-button">PLAY GAME</div>
+                            </div>
+                        </div>
+                        <div id="trailerView" style="display: none;">
+                            <div class="trailer-container">
+                                <div class="trailer-placeholder">TRAILER</div>
+                            </div>
+                        </div>
+                        <div id="filesView" style="display: none;">
+                            <div class="files-container">
+                                <div class="week-item">
+                                    <div class="week-header" onclick="toggleWeek(this)">
+                                        <span>WEEK 1-2</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="week-content">
+                                        <p>The first two weeks focused on getting organized. Kelvin and I met with our GL teacher to discuss the game concept and created a project timeline. We assigned roles based on our strengths and spent time browsing Unity Asset Store and itch.io for free assets that would work for our roguelike wave defense game.</p>
+                                    </div>
+                                </div>
+                                <div class="week-item">
+                                    <div class="week-header" onclick="toggleWeek(this)">
+                                        <span>WEEK 3-4</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="week-content">
+                                        <p>We started following our development schedule and began implementing the core gameplay. During this time, we encountered our first major bug with the skeleton enemy's attack animation not playing correctly. Kelvin and I spent some time debugging together, going through the code line by line until we found the issue. After fixing it, we noticed similar bugs popping up with other enemies, but we were able to solve them much faster thanks to the experience we gained from the first one.</p>
+                                    </div>
+                                </div>
+                                <div class="week-item">
+                                    <div class="week-header" onclick="toggleWeek(this)">
+                                        <span>WEEK 5-6</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="week-content">
+                                        <p>We held our first open play test and collected feedback through a Google Form. The responses were a bit inadequate since we didn't have much content in the game yet. During these weeks, we also worked on our first unique enemy, the flying eye. It caused us some problems initially, but we applied what we learned from fixing the skeleton enemy's attack animation bug and managed to solve the issues relatively quickly.</p>
+                                    </div>
+                                </div>
+                                <div class="week-item">
+                                    <div class="week-header" onclick="toggleWeek(this)">
+                                        <span>WEEK 7-8</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="week-content">
+                                        <p>These weeks were busy with major additions to the game. We created our first boss enemy and spent time balancing all the enemies to make the gameplay feel fair. We also revamped the UI icons for the shop and upgrades screen. Adding music was a completely new experience for me, but it made the game feel more complete. We also built out the start screen and additional screens like the enemy catalogue and settings menu.</p>
+                                    </div>
+                                </div>
+                                <div class="week-item">
+                                    <div class="week-header" onclick="toggleWeek(this)">
+                                        <span>WEEK 9-10</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="week-content">
+                                        <p>We began working on this e-portfolio to document our development journey. During our consultation with the GL teacher, some unexpected bugs were discovered that we had to fix. We also focused on the final polishing of the game, making sure everything looked and felt as good as possible before wrapping up the project.</p>
+                                    </div>
+                                </div>
+                                <div class="week-item">
+                                    <div class="week-header" onclick="toggleWeek(this)">
+                                        <span>WEEK 11-14</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="week-content">
+                                        <p>The final stretch focused on completing this e-portfolio and getting everything ready for presentation. We prepared for the GL interview, reviewing our development process and what we learned. We also conducted our final open play test to gather last minute feedback and ensure the game was ready for submission.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+        const powerButton = document.getElementById('powerButton');
+        const carouselView = document.getElementById('carouselView');
+        const playGameView = document.getElementById('playGameView');
+        const trailerView = document.getElementById('trailerView');
+        const filesView = document.getElementById('filesView');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const screenSidebar = document.getElementById('screenSidebar');
+        const webcamBtn = document.getElementById('webcamBtn');
+        const photosBtn = document.getElementById('photosBtn');
+        const filesBtn = document.getElementById('filesBtn');
+        let isPoweredOn = false;
+
+        // Power button functionality
+        powerButton.addEventListener('click', function() {
+            isPoweredOn = !isPoweredOn;
+            
+            if (isPoweredOn) {
+                powerButton.classList.add('powered-on');
+                carouselView.style.display = 'none';
+                playGameView.style.display = 'flex';
+                trailerView.style.display = 'none';
+                filesView.style.display = 'none';
+                screenSidebar.style.display = 'none';
+                sidebarToggle.style.display = 'none';
+            } else {
+                powerButton.classList.remove('powered-on');
+                carouselView.style.display = 'flex';
+                playGameView.style.display = 'none';
+                trailerView.style.display = 'none';
+                filesView.style.display = 'none';
+                screenSidebar.style.display = 'none';
+                sidebarToggle.style.display = 'flex';
+            }
+        });
+
+        // Hover-based sidebar toggle
+        sidebarToggle.addEventListener('mouseenter', function() {
+            screenSidebar.style.display = 'flex';
+        });
+
+        screenSidebar.addEventListener('mouseleave', function() {
+            screenSidebar.style.display = 'none';
+        });
+
+        sidebarToggle.addEventListener('mouseleave', function() {
+            setTimeout(() => {
+                if (!screenSidebar.matches(':hover')) {
+                    screenSidebar.style.display = 'none';
+                }
+            }, 100);
+        });
+
+        // Navigation buttons
+        webcamBtn.addEventListener('click', function() {
+            carouselView.style.display = 'none';
+            trailerView.style.display = 'flex';
+            filesView.style.display = 'none';
+        });
+
+        photosBtn.addEventListener('click', function() {
+            trailerView.style.display = 'none';
+            carouselView.style.display = 'flex';
+            filesView.style.display = 'none';
+        });
+
+        filesBtn.addEventListener('click', function() {
+            carouselView.style.display = 'none';
+            trailerView.style.display = 'none';
+            filesView.style.display = 'flex';
+        });
+
+        // Toggle week dropdown function
+        function toggleWeek(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('i');
+            const isOpen = content.style.display === 'block';
+            
+            if (isOpen) {
+                content.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Keyboard navigation with A and D keys
+        document.addEventListener('keydown', function(event) {
+            const key = event.key.toLowerCase();
+            if (key === 'a' || key === 'd') {
+                console.log(`${key.toUpperCase()} key pressed - Navigate images here`);
+                // Image navigation logic will be added when you add actual images
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Developer Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Nintendo DS Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            overflow: hidden;
+            height: 100vh;
+        }
+        .hero-content h1,
+        .hero-content h2,
+        .hero-content p {
+            font-family: 'Press Start 2P', cursive;
+            line-height: 1.8;
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+        }
+        .hero-content h1 {
+            font-size: 1.3rem;
+            color: #FFE66D;
+            margin-bottom: 1rem;
+        }
+        .hero-content h2 {
+            font-size: 0.65rem;
+            color: #A7F3D0;
+        }
+        .hero-content p {
+            font-size: 0.55rem;
+            color: #FFFFFF;
+        }
+        .cta-button {
+            font-family: 'Press Start 2P', cursive;
+            background: #FF6B6B;
+            border: 4px solid #FFE66D;
+            padding: 1rem 2rem;
+            font-size: 0.6rem;
+            box-shadow: 0 8px 0 #C92A2A, 0 10px 20px rgba(0, 0, 0, 0.4);
+            animation: pulse 1.5s ease-in-out infinite;
+            position: relative;
+            text-transform: uppercase;
+        }
+        .cta-button:hover {
+            transform: translateY(4px);
+            box-shadow: 0 4px 0 #C92A2A, 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        .cta-button:active {
+            transform: translateY(8px);
+            box-shadow: 0 0 0 #C92A2A, 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">Nazrin Ally</div>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Project</a></li>
+            <li><a href="features.html">Progression</a></li>
+            <li><a href="gallery.html">Documents</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-content">
+        <!-- Nintendo DS Style Device -->
+        <div class="handheld-device">
+        <!-- Decorative Wire -->
+        <svg class="ds-wire" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="wireGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#4a5568;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <path d="M 100,80 Q 75,30 50,15 T 0,0" 
+                  stroke="url(#wireGradient)" 
+                  stroke-width="1.5" 
+                  fill="none" 
+                  stroke-linecap="round"/>
+        </svg>
+        
+        <div class="device-body">
+            <div class="device-top">
+                <div class="speaker-dot"></div>
+                <div class="speaker-dot"></div>
+                <div class="speaker-dot"></div>
+            </div>
+            
+            <div class="device-screen">
+                <div class="screen-bezel">
+                    <div class="screen-display">
+                        <div class="hero-content">
+                            <h1>Guided Learning Project</h1>
+                            <h2>Creating Immersive Gaming Experiences</h2>
+                            <p>Welcome to my game development portfolio</p>
+                            <div class="hero-buttons">
+                                <a href="about.html" class="cta-button">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="device-bottom">
+                <div class="d-pad">
+                    <div class="d-pad-center"></div>
+                </div>
+                <div class="action-buttons">
+                    <div class="action-btn red-btn"></div>
+                    <div class="action-btn blue-btn"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Nintendo DS Blue Button Navigation
+        const blueButton = document.querySelector('.blue-btn');
+        const ctaButton = document.querySelector('.cta-button');
+        
+        if (blueButton) {
+            blueButton.addEventListener('click', () => {
+                window.location.href = 'about.html';
+            });
+        }
+        
+        // Also make CTA button trigger on red button click
+        const redButton = document.querySelector('.red-btn');
+        if (redButton && ctaButton) {
+            redButton.addEventListener('click', () => {
+                ctaButton.click();
+            });
+        }
+    </script>
+</body>
+</html>

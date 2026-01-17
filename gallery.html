@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents - Game Developer Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">Nazrin Ally</div>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Project</a></li>
+            <li><a href="features.html">Progression</a></li>
+            <li><a href="gallery.html" class="active">Documents</a></li>
+        </ul>
+    </nav>
+
+    <!-- Documents Content -->
+    <main class="page-content">
+        <section id="gallery" class="section">
+            <div class="thumbdrives-container">
+                <div class="thumbdrive" id="projectProposal">
+                    <div class="usb-body">
+                        <div class="usb-main">
+                            <span class="thumbdrive-label">Project Proposal</span>
+                        </div>
+                        <div class="usb-connector"></div>
+                    </div>
+                </div>
+                <div class="thumbdrive" id="learningContract">
+                    <div class="usb-body">
+                        <div class="usb-main">
+                            <span class="thumbdrive-label">Learning Contract</span>
+                        </div>
+                        <div class="usb-connector"></div>
+                    </div>
+                </div>
+                <div class="thumbdrive" id="learningLog">
+                    <div class="usb-body">
+                        <div class="usb-main">
+                            <span class="thumbdrive-label">Learning Log</span>
+                        </div>
+                        <div class="usb-connector"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hidden file input for PDF upload -->
+            <input type="file" id="pdfUpload" accept=".pdf" style="display: none;">
+            
+            <!-- PDF Viewer Modal -->
+            <div id="pdfModal" class="pdf-modal" style="display: none;">
+                <div class="pdf-modal-content">
+                    <button class="pdf-close-btn" onclick="closePdfModal()">×</button>
+                    <iframe id="pdfViewer" class="pdf-iframe"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+    <script>
+        let currentThumbdrive = null;
+        
+        // Handle thumbdrive clicks
+        document.getElementById('projectProposal').addEventListener('click', function() {
+            handleThumbdriveClick('projectProposal');
+        });
+        
+        document.getElementById('learningContract').addEventListener('click', function() {
+            handleThumbdriveClick('learningContract');
+        });
+        
+        document.getElementById('learningLog').addEventListener('click', function() {
+            handleThumbdriveClick('learningLog');
+        });
+        
+        function handleThumbdriveClick(driveId) {
+            currentThumbdrive = driveId;
+            const savedPdf = localStorage.getItem(driveId + '_pdf');
+            
+            if (savedPdf) {
+                // PDF exists, open it
+                openPdf(savedPdf);
+            } else {
+                // No PDF, trigger upload
+                document.getElementById('pdfUpload').click();
+            }
+        }
+        
+        // Handle file upload
+        document.getElementById('pdfUpload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file && file.type === 'application/pdf') {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    // Save PDF to localStorage
+                    localStorage.setItem(currentThumbdrive + '_pdf', event.target.result);
+                    // Open the PDF
+                    openPdf(event.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+            // Reset input
+            e.target.value = '';
+        });
+        
+        function openPdf(pdfData) {
+            // Display PDF in modal
+            document.getElementById('pdfViewer').src = pdfData;
+            document.getElementById('pdfModal').style.display = 'flex';
+        }
+        
+        function closePdfModal() {
+            document.getElementById('pdfModal').style.display = 'none';
+            document.getElementById('pdfViewer').src = '';
+        }
+    </script>
+</body>
+</html>
