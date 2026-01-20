@@ -1,3 +1,24 @@
+// Carousel switching logic for features.html
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselSet1 = document.getElementById('carouselSet1');
+    const carouselSet2 = document.getElementById('carouselSet2');
+    let currentCarousel = 1;
+    document.addEventListener('keydown', function(event) {
+        if (event.key.toLowerCase() === 'd') {
+            if (currentCarousel === 1) {
+                carouselSet1.style.display = 'none';
+                carouselSet2.style.display = 'block';
+                currentCarousel = 2;
+            }
+        } else if (event.key.toLowerCase() === 'a') {
+            if (currentCarousel === 2) {
+                carouselSet2.style.display = 'none';
+                carouselSet1.style.display = 'block';
+                currentCarousel = 1;
+            }
+        }
+    });
+});
 // Navigation Toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');

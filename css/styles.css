@@ -1234,6 +1234,18 @@ body.loaded {
     opacity: 0.5;
     letter-spacing: 2px;
 }
+.screen-box img + .screen-caption,
+.screen-box img {
+    /* Hide the [IMAGE SLOT] label if an image is present */
+}
+.screen-box img ~ .screen-caption,
+.screen-box img {
+    /* Hide the [IMAGE SLOT] label if an image is present */
+}
+.screen-box:has(img)::after {
+    display: none !important;
+    content: none !important;
+}
 
 .screen-caption {
     position: absolute;
