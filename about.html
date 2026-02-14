@@ -40,6 +40,7 @@
                 <!-- Instagram Header -->
                 <div class="instagram-header">
                     <div class="instagram-username">nazrin_ally</div>
+                    <span style="color: black; font-size: 14px; margin-right: 10px; cursor: pointer;" id="skillsText">Skills &gt;</span>
                     <div class="profile-icon" id="profileIcon">
                         <i class="fas fa-user-circle"></i>
                     </div>
@@ -126,11 +127,17 @@
     <script>
         // Profile Icon Click Handler
         const profileIcon = document.getElementById('profileIcon');
+        const skillsText = document.getElementById('skillsText');
         const skillsModal = document.getElementById('skillsModal');
         const mainContent = document.getElementById('mainContent');
         const closeModal = document.getElementById('closeModal');
         
         profileIcon.addEventListener('click', () => {
+            mainContent.style.display = 'none';
+            skillsModal.style.display = 'block';
+        });
+        
+        skillsText.addEventListener('click', () => {
             mainContent.style.display = 'none';
             skillsModal.style.display = 'block';
         });
