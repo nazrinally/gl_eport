@@ -58,9 +58,6 @@
                 </div>
             </div>
             
-            <!-- Hidden file input for PDF upload -->
-            <input type="file" id="pdfUpload" accept=".pdf" style="display: none;">
-            
             <!-- PDF Viewer Modal -->
             <div id="pdfModal" class="pdf-modal" style="display: none;">
                 <div class="pdf-modal-content">
@@ -74,54 +71,29 @@
     <script src="js/main.js"></script>
     <script src="js/gallery.js"></script>
     <script>
-        let currentThumbdrive = null;
+        // PDF file paths
+        const pdfFiles = {
+            'projectProposal': 'assets/Student Initiated Proposal Form_NazrinAlly_240459H.pdf',
+            'learningContract': 'assets/LearningContract_Nazrin.pdf',
+            'learningLog': 'assets/My Learning Log-4 Nazrin.pdf'
+        };
         
         // Handle thumbdrive clicks
         document.getElementById('projectProposal').addEventListener('click', function() {
-            handleThumbdriveClick('projectProposal');
+            openPdf(pdfFiles.projectProposal);
         });
         
         document.getElementById('learningContract').addEventListener('click', function() {
-            handleThumbdriveClick('learningContract');
+            openPdf(pdfFiles.learningContract);
         });
         
         document.getElementById('learningLog').addEventListener('click', function() {
-            handleThumbdriveClick('learningLog');
+            openPdf(pdfFiles.learningLog);
         });
         
-        function handleThumbdriveClick(driveId) {
-            currentThumbdrive = driveId;
-            const savedPdf = localStorage.getItem(driveId + '_pdf');
-            
-            if (savedPdf) {
-                // PDF exists, open it
-                openPdf(savedPdf);
-            } else {
-                // No PDF, trigger upload
-                document.getElementById('pdfUpload').click();
-            }
-        }
-        
-        // Handle file upload
-        document.getElementById('pdfUpload').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file && file.type === 'application/pdf') {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    // Save PDF to localStorage
-                    localStorage.setItem(currentThumbdrive + '_pdf', event.target.result);
-                    // Open the PDF
-                    openPdf(event.target.result);
-                };
-                reader.readAsDataURL(file);
-            }
-            // Reset input
-            e.target.value = '';
-        });
-        
-        function openPdf(pdfData) {
+        function openPdf(pdfPath) {
             // Display PDF in modal
-            document.getElementById('pdfViewer').src = pdfData;
+            document.getElementById('pdfViewer').src = pdfPath;
             document.getElementById('pdfModal').style.display = 'flex';
         }
         
